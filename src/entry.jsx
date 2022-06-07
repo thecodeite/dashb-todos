@@ -1,6 +1,10 @@
-import * as React from 'react'
+import React from 'react'
 import {render} from 'react-dom'
+import {createStore} from 'redux'
 
 import {RashbTodos} from './components/RashbTodos'
+import {todoApp} from './reducers'
 
-render(<RashbTodos />, document.getElementById('app'))
+const store = createStore(todoApp)
+
+render(<RashbTodos store={store} />, document.getElementById('app'))

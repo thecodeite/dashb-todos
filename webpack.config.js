@@ -2,6 +2,10 @@ const path = require('path')
 const SplitByPathPlugin = require('webpack-split-by-path')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 
+if (!process.env['ENV']) {
+  process.env['ENV'] = 'local'
+}
+
 const outputDir = 'dist-' + process.env['ENV']
 
 module.exports = {
